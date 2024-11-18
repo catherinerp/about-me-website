@@ -13,6 +13,7 @@ Welcome to my personal portfolio website! This project showcases my skills, serv
 - **Frontend**: React.js
 - **Icons**: Font Awesome for icons
 - **CSS**: Custom styles for layout and responsiveness
+- **Contact Form**: EmailJS for contact form functionality
 
 ## Installation
 

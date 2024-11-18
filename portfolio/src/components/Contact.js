@@ -1,12 +1,31 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  const [message, setMessage] = useState('');
+  const [contactFeedback, setContactFeedback] = useState('');
+  const emailjsUserId = process.env.REACT_APP_EMAILJS_USER_ID;
+  const emailjsServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const emailjsTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  
+  emailjs.init(emailjsUserId);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage('Message sent successfully!');
-    setTimeout(() => setMessage(''), 5000);
+    let parms = {
+        name : document.getElementById("contact-name").value,
+        email : document.getElementById("contact-email").value,
+        subject : document.getElementById("contact-subject").value,
+        message : document.getElementById("contact-message").value,
+    }
+
+    emailjs.send(emailjsServiceId, emailjsTemplateId, parms)
+      .then(() => {
+        setContactFeedback('Message sent successfully!');
+        setTimeout(() => setContactFeedback(''), 5000);
+      })
+      .catch((err) => {
+        console.error("Failed to send email:", err);
+      });
   };
 
   return (
@@ -27,12 +46,13 @@ const Contact = () => {
           </div>
           <div className="contact-right">
             <form onSubmit={handleSubmit}>
-              <input type="text" name="Name" placeholder="Your Name" required />
-              <input type="email" name="Email" placeholder="Your Email" required />
-              <textarea name="Message" rows="10" placeholder="Your Message" required />
+              <input id="contact-name" type="text" name="Name" placeholder="Name" required />
+              <input id="contact-email" type="email" name="Email" placeholder="Email" required />
+              <input id="contact-subject" type="text" name="Subject" placeholder="Subject" required />
+              <textarea id="contact-message" name="Message" rows="10" placeholder="Message" required />
               <button type="submit" className="btn btn2">Submit</button>
             </form>
-            {message && <span id="msg">{message}</span>}
+            {contactFeedback && <span id="msg">{contactFeedback}</span>}
           </div>
         </div>
       </div>
