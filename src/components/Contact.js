@@ -42,7 +42,7 @@ const Contact = () => {
                 <i className="fa-brands fa-github"></i>
               </a>
             </div>
-            <a href="images/my-cv.pdf" download className="btn btn2">Download CV</a>
+            <a href="images/Resume.pdf" download className="btn btn2">Download CV</a>
           </div>
           <div className="contact-right">
             <form onSubmit={handleSubmit}>

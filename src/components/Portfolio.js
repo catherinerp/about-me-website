@@ -1,5 +1,6 @@
 import React from 'react';
 import AiAppImg from '../images/ai-app.png';
+import HabitAppImg from '../images/habit-app.png'
 
 const Portfolio = () => {
   return (
@@ -8,7 +9,7 @@ const Portfolio = () => {
         <h1 className="sub-title">My Work</h1>
         <div className="work-list">
           <div className="work">
-            <img src={AiAppImg} alt="Work 1" />
+            <img src={AiAppImg} alt="AI Code Assistant" />
             <div className="layer">
               <h3>AI Code Assistant</h3>
               <p>The app allows you to intelligently improve your code and skills...</p>
@@ -16,7 +17,7 @@ const Portfolio = () => {
             </div>
           </div>
           <div className="work">
-            <img src="./images/work-2.png" alt="Work 2" />
+            <img src={HabitAppImg} alt="Habit Tracker App" />
             <div className="layer">
               <h3>Habit Tracker</h3>
               <p>The app is a personal assistant to organize your day...</p>
@@ -24,7 +25,7 @@ const Portfolio = () => {
             </div>
           </div>
           <div className="work">
-            <img src="./images/work-3.png" alt="Work 3" />
+            <img alt="" />
             <div className="layer">
               <h3>Workout Tracker</h3>
               <p>Coming soon...</p>
