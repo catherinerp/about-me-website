@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const Contact = () => {
-  const [message, setMessage] = useState('');
+const About = () => {
   const [activeTab, setActiveTab] = useState("skills");
 
   const handleTabClick = (tabName) => {
@@ -12,9 +11,7 @@ const Contact = () => {
     <div id="about">
         <div className="container">
           <div className="row">
-            <div className="about-col-1">
-              <img src="images/me.png" alt="me" />
-            </div>
+            <div className="about-col-1"></div>
             <div className="about-col-2">
               <h1 className="sub-title">Who am I?</h1>
               <p>
@@ -68,4 +65,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default About;
